@@ -47,7 +47,7 @@ public class Packer {
     /**
      * shipBin
      * Purpose: A bin is packed and shipped out. Remove the items in that bin from both the
-     * itemSize and binNumber lists. 
+     * itemSize and binNumber lists. Part of removing the bin number is renumber bins above that number.
      * @param itemSize
      * @param binNumber
      * @param bin
