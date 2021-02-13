@@ -4,6 +4,13 @@ You should already know the overview of what bin packing is and how we
 represent it. Watch a video if you have not seen the next fit and best
 fit packing strategies in action.
 
+If you want code for repl.it, you should fork [the BinPackingWY
+repl](https://repl.it/@maueroats/BinPackingWY). 
+
+Get [the code from
+GitHub](https://github.com/2020-2021-WY-AP-CS/bin-packing) using the
+big green Code button. 
+
 ## Overview
 
 The `PackingStrategy` interface is an abstract way of saying "an
