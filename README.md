@@ -11,6 +11,8 @@ Get [the code from
 GitHub](https://github.com/2020-2021-WY-AP-CS/bin-packing) using the
 big green Code button. 
 
+Check the [bin-packing wiki](https://github.com/2020-2021-WY-AP-CS/bin-packing/wiki) to see questions and answers, and any further information.
+
 ## Overview
 
 The `PackingStrategy` interface is an abstract way of saying "an
