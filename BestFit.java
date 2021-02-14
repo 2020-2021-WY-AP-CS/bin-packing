@@ -1,4 +1,7 @@
 import java.util.*;
+/*
+See PackingStrategy.java for a description of the function.
+*/
 public class BestFit implements PackingStrategy {
     /* Should return the bin number where the item is to be placed.
     * NOTE: Return a number 1 greater than the number of bins the item does
