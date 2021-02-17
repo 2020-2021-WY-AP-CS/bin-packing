@@ -16,6 +16,53 @@ public class TestPacking {
         ex3bins = new ArrayList<>(Arrays.asList(0,1,1,2,0,3,3));
     }
 
+    @Test
+    public void test_nextfit_nomutate() {
+        List<Integer> bins = new ArrayList<>();
+        bins.add(15);
+        bins.add(10);
+
+        PackingStrategy fitter = new NextFit();
+        int binCapacity = 20;
+
+        assertEquals(1, fitter.itemPlace(bins, binCapacity, 7));
+        // itemPlace does not mutate inputs!
+        assertEquals(Arrays.asList(15,10), bins);
+    }
+
+    @Test
+    public void test_nextfit_not_firstfit() {
+        // the last bin in the list is the one you are working on filling.
+        // nextfit will not go back to fill previous bins
+        List<Integer> bins = new ArrayList<>();
+        bins.add(10);
+        bins.add(18);
+
+        PackingStrategy fitter = new NextFit();
+        int binCapacity = 20;
+
+        assertEquals(2, fitter.itemPlace(bins, binCapacity, 7));
+        // itemPlace does not mutate inputs!
+        assertEquals(Arrays.asList(10,18), bins);
+    }
+
+    @Test
+    public void test_bestfit_nomutate() {
+        List<Integer> bins = new ArrayList<>();
+        bins.add(15);
+        bins.add(19);
+        bins.add(16);
+        bins.add(10);
+
+        PackingStrategy fitter = new BestFit();
+        int binCapacity = 20;
+
+        assertEquals(2, fitter.itemPlace(bins, binCapacity, 3));
+        // itemPlace does not mutate inputs!
+        assertEquals(Arrays.asList(15,19,16,10), bins);
+    }
+
+                 
     public void testPacking(List<Integer> correct, List<Integer> nums, int binCapacity, PackingStrategy fitter) {
         Packer packer = new Packer(fitter);
         List<Integer> result = packer.packAll(binCapacity, nums);
